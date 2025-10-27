@@ -172,7 +172,6 @@ int main() {
     cout << "| C++ Calculator |" << endl;
     cout << "| Niilo Keskinen |" << endl;
     cout << "+----------------+" << endl;
-    cout << "*accurate to only 6 decimal places because of floating point!" << endl;
 
     cin.get();
     clearScreen();
@@ -184,7 +183,7 @@ int main() {
         getline(cin, input);
 
         if (input == "exit") {
-            cout << "EXITING..." << endl;
+            clearScreen();
             break;
         }
         else if (input == "clear" || input == "cls") {
