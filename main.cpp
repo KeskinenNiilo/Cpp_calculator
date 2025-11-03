@@ -95,12 +95,23 @@ double calculate(vector<string>& v) { // The part that calculates things
             size_t start = i;
             int count = 1;
             size_t j = i + 1;
+            
+            while (j < v.size() && count > 0) {
+                if (v[j] == "(") count++;
+                else if (v[j] == ")") count--;
+                j++;
+            }
+            
+            if (count != 0) {
+                throw runtime_error("Mismatched parentheses");
+            }
+            
             vector<string> subExpr(v.begin() + start + 1, v.begin() + j - 1);
-            double subResult = calculate(subExpr); // recursion
-
+            double subResult = calculate(subExpr);
+            
             v.erase(v.begin() + start, v.begin() + j);
             v.insert(v.begin() + start, to_string(subResult));
-
+            
             i = 0;
         } else {
             i++;
