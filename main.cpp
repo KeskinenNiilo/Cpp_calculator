@@ -22,7 +22,7 @@ void clearScreen() { // Checks system for console clear
 bool validString(const string& s) { // Check input
     static const unordered_set<char> validChars = {
         '0','1','2','3','4','5','6','7','8','9',
-        ' ', '+', '-', '*', '/', '^', '(', ')'
+        ' ', '.', '+', '-', '*', '/', '^', '(', ')'
     };
 
     for (char c : s) {
