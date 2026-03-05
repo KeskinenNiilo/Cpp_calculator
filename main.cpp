@@ -13,7 +13,6 @@ using namespace std;
 
 void clearScreen() { // Checks system for console clear
     #ifdef _WIN32
-        system("chcp 65001");
         system("cls");
     #else
         system("clear");
@@ -186,6 +185,9 @@ int main() {
     cout << "+----------------+" << endl;
 
     cin.get();
+    #ifdef _WIN32
+        system("chcp 65001");
+    #endif
     clearScreen();
 
     string input;
