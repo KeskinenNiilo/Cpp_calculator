@@ -13,6 +13,7 @@ using namespace std;
 
 void clearScreen() { // Checks system for console clear
     #ifdef _WIN32
+        system("chcp 65001");
         system("cls");
     #else
         system("clear");
@@ -190,7 +191,7 @@ int main() {
     string input;
 
     while (true) {
-        cout << "INPUT: ";
+        cout << "\u2190 ";
         getline(cin, input);
 
         if (input == "exit") {
@@ -212,8 +213,8 @@ int main() {
         try {
             double result = calculate(tokens);
             double rounded = round(result * 1e6) / 1e6;
-            if (floor(rounded) == rounded) cout << "= " << static_cast<long long>(rounded) << endl;
-            else cout << "= " << fixed << setprecision(6) << rounded << endl;
+            if (floor(rounded) == rounded) cout << "\u2192 " << static_cast<long long>(rounded) << endl;
+            else cout << "\u2192 " << fixed << setprecision(6) << rounded << endl;
             cout << endl;
         }
         catch (const exception& e) {
